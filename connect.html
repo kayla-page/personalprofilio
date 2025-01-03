@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Connect with Kayla</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Navigation Bar (Same as in index.html) -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Kayla Page</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="work.html">Work</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="resume.html">Resume</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="blog.html">Blog</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="connect.html">Let's Connect!</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work</a>
+                <a href="resume.html">Resume</a>
+                <a href="blog.html">Blog</a>
+                <a href="connect.html">Let's Connect!</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Connect Section -->
+    <section>
+        <div class="main-container">
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Let's Connect!</h1>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+                    Want to get in touch? Feel free to reach out! You can send me an email directly through Outlook or Gmail.
+                </p>
+                <div class="cta" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                    <button id="connectBtn">Send Me an Email</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Pop-up -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Contact Kayla</h3>
+                <span class="close-btn" onclick="closePopup()">×</span>
+            </div>
+            <div class="popup-body">
+                <p><strong>Personal Email:</strong> kaylapage5600@gmail.com</p>
+                <p><strong>School Email:</strong> pageka02@gettysburg.edu</p>
+                <p>Select a platform to send me an email:</p>
+                <div class="email-options">
+                    <a href="mailto:kaylapage5600@gmail.com?subject=Hello Kayla" class="email-option" id="gmail">
+                        <i class="fa-brands fa-google"></i> Gmail
+                    </a>
+                    <a href="mailto:pageka02@gettysburg.edu?subject=Hello Kayla" class="email-option" id="outlook">
+                        <i class="fa-brands fa-microsoft"></i> Outlook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+
+        // Open the popup when the button is clicked
+        const connectBtn = document.getElementById('connectBtn');
+        const popup = document.getElementById('popup');
+
+        connectBtn.onclick = function() {
+            popup.style.display = 'flex';
+        };
+
+        // Close the popup
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+    </script>
+
+    <script>
+        function hamburg() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(0px)";
+        }
+
+        function cancel() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(-500px)";
+        }
+    </script>
+
+</body>
+</html>
